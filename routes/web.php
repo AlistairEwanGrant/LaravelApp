@@ -23,5 +23,4 @@ Route::get('/about', "App\Http\Controllers\PagesController@about");
 
 Route::get('/services', "App\Http\Controllers\PagesController@services");
 
-
-
+Route::resource('post', 'App\Http\Controllers\PostsController');
