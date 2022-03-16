@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/users/{id}/{name}', function ($id, $name) {
-//     return "This is user " . $name . " with an id of " . $id;
-// });
+
 
 Route::get('/', "App\Http\Controllers\PagesController@index");
 
@@ -23,4 +21,4 @@ Route::get('/about', "App\Http\Controllers\PagesController@about");
 
 Route::get('/services', "App\Http\Controllers\PagesController@services");
 
-Route::resource('post', 'App\Http\Controllers\PostsController');
+Route::resource('posts', 'App\Http\Controllers\PostsController');
