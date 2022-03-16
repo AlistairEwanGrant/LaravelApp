@@ -30,3 +30,7 @@ Route::post('posts/create', 'App\Http\Controllers\PostsController@store');
 Route::get('posts/{id}/edit', 'App\Http\Controllers\PostsController@update');
 
 Route::put('posts/{id}/edit', 'App\Http\Controllers\PostsController@update');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

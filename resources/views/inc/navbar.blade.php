@@ -22,10 +22,48 @@
             <a class="nav-link" href="/lsapp/public/posts">Blog</a>
           </li>
         </ul>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li><a class="nav-link" href="/lsapp/public/posts/create">Create Post</a></li>
-        </ul>
         
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                
+              
+            </ul>
+
+              @if (Auth::guest())
+                  <li><a href="{{ route('login') }}">Login</a></li>
+                  <li><a href="{{ route('register') }}">Register</a></li>
+              @else
+              
+              
+              <div class="btn-group">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                  {{ Auth::user()->name }} <span class="caret"></span>
+                </button>
+                      {{-- <a href="#" class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                          
+                      </a> --}}
+                      
+                     
+                      <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+                          <li><a class="dropdown-item" href="/lsapp/public/">Home</a></li>
+                          <li><a class="nav-link" href="/lsapp/public/posts/create">Create Post</a></li>
+                          <li>
+                              <a class="dropdown-item" href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                  Logout
+                              </a>
+
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  {{ csrf_field() }}
+                              </form>
+                          </li>
+                      </ul>
+                    </div>
+              @endif
+            </ul>
+        </div>
+    </div>
+</nav>
       </div>
     </div>
   </nav>
