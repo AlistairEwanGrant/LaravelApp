@@ -22,3 +22,7 @@ Route::get('/about', "App\Http\Controllers\PagesController@about");
 Route::get('/services', "App\Http\Controllers\PagesController@services");
 
 Route::resource('posts', 'App\Http\Controllers\PostsController');
+
+Route::get('posts/create', 'App\Http\Controllers\PostsController@create');
+
+Route::post('posts/create', 'App\Http\Controllers\PostsController@store');
