@@ -21,9 +21,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/lsapp/public/posts">Blog</a>
           </li>
-            </ul>
-          </li>
         </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li><a class="nav-link" href="/lsapp/public/posts/create">Create Post</a></li>
+        </ul>
+        
       </div>
     </div>
   </nav>
