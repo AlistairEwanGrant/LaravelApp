@@ -17,8 +17,17 @@
         
             
         
-        {{form::submit('Submit', ['class'=>'btn btn-primary'])}}
+    {{form::submit('Submit', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
+
+    @if (!Auth::guest())
+        @if(Auth::user()->id == $post->user_id)
+        {!! Form::open(['PostsController' => 'destroy', $post->id, 'class' => 'float-end'])!!}
+            @method('DELETE')
+            {!! Form::submit('Delete', ['class' => 'btn btn-danger'])!!}
+        {!!Form::close()!!}
+        @endif
+    @endif
   
 @endsection
 
