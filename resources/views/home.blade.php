@@ -10,22 +10,20 @@
                 {{ __('You are logged in!') }}
 
                     <h3>Your  Blog Posts</h3>
+                    <a class="btn btn-primary" href="/lsapp/public/posts/create">Create Post</a> 
                     @if(count($posts) >0)
                     <table class="table table-striped">
                         <tr>
-                            <td><a class="btn btn-primary" href="/lsapp/public/posts/create">Create Post</a> </td>
+                            <td></td>
                             <td></td>
                             <td></td>
                         </tr>
                         @foreach($posts as $post)
                         <tr>
                             <td>{{$post->title}}</td>
-                            <td><a href="/lsapp/public/posts/{{$post->id}}/edit" class="btn btn-primary">Edit</a></td>
+                            <td></td>
                             <td>
-                                {!! Form::open(['PostsController' => 'destroy', $post->id, 'class' => 'float-end'])!!}
-                                @method('DELETE')
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger'])!!}
-                                {!!Form::close()!!}
+                                <a href="/lsapp/public/posts/{{$post->id}}/edit" class="btn btn-primary float-end">Edit</a>
                             </td>
                         </tr>
                         @endforeach
