@@ -26,3 +26,7 @@ Route::resource('posts', 'App\Http\Controllers\PostsController');
 Route::get('posts/create', 'App\Http\Controllers\PostsController@create');
 
 Route::post('posts/create', 'App\Http\Controllers\PostsController@store');
+
+Route::get('posts/{id}/edit', 'App\Http\Controllers\PostsController@update');
+
+Route::put('posts/{id}/edit', 'App\Http\Controllers\PostsController@update');
