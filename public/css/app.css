@@ -11289,3 +11289,7 @@ textarea.form-control-lg {
 .lowerMargin {
   margin-bottom: 20px !important;
 }
+
+.width80 {
+  width: 80%;
+}
