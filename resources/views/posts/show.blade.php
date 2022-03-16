@@ -12,5 +12,9 @@
     <hr>
     <a href="/lsapp/public/posts/{{$post->id}}/edit" class="btn btn-primary">Edit</a>
 
+    {!! Form::open(['PostsController' => 'destroy', $post->id, 'class' => 'float-end'])!!}
+        @method('DELETE')
+        {!! Form::submit('Delete', ['class' => 'btn btn-danger'])!!}
+    {!!Form::close()!!}
 
 @endsection
