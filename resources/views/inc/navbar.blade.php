@@ -10,7 +10,7 @@
             <a class="nav-link active" aria-current="page" href="/lsapp/public">{{config("app.name", "LSAPP")}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/lsapp/public">Home</a>
+            <a class="nav-link" href="/lsapp/public/home">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/lsapp/public/about">About</a>
@@ -29,8 +29,8 @@
             </ul>
 
               @if (Auth::guest())
-                  <li><a href="{{ route('login') }}">Login</a></li>
-                  <li><a href="{{ route('register') }}">Register</a></li>
+                  <li><a class="text-decoration-none" href="{{ route('login') }}">Login</a></li>
+                  <li><a class="text-decoration-none" href="{{ route('register') }}">Register</a></li>
               @else
               
               
@@ -38,14 +38,11 @@
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
                   {{ Auth::user()->name }} <span class="caret"></span>
                 </button>
-                      {{-- <a href="#" class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-                          
-                      </a> --}}
-                      
+                                           
                      
                       <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-                          <li><a class="dropdown-item" href="/lsapp/public/">Home</a></li>
-                          <li><a class="nav-link" href="/lsapp/public/posts/create">Create Post</a></li>
+                          <li><a class="dropdown-item" href="/lsapp/public/home">Home</a></li>
+                          <li><a class="dropdown-item" href="/lsapp/public/posts/create">Create Post</a></li>
                           <li>
                               <a class="dropdown-item" href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
