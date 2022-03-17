@@ -30,52 +30,80 @@ class HomeController extends Controller
         return view('home')->with('posts', $user->posts);
     }
 
+    // public function store(Request $request)
+    // {
+    //     $this->validate($request, [
+    //         'title' => 'required',
+    //         'body' => 'required',
+    //         'cover_image' => 'image|nullable|max:1999'
+    //     ]);
+
+    //     //handel img upload
+
+    //     if($request->hasFile('cover_image')){
+    //         $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+
+    //         $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+    //         $extension = $request->file('cover_image')->getClientOriginalExtension();
+
+    //         $fileNameToStore = $filename.'_'.time().'.'.$extension;
+
+    //         $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+    //     }else{
+    //         $fileNameToStore = 'noimage.jpg';
+    //     }
+
+    //     $post= new Post;
+    //     $post->title = $request->input('title');
+    //     $post->body = $request->input('body');
+    //     $post->user_id = auth()->user()->id;
+    //     $post->cover_image = $fileNameToStore;
+    //     $post->save();
+
+    //     return redirect('/posts')->with('success', 'Post Created');
+
+    // }
 
     public function edit($id)
     {
 
         $users = User::find($id);
-        // $user = User::find($user_id);
         
         return view("home.editBio")->with('users', $users);
 
-        // $post = Post::find($id);
-        
-        // if(auth()->user()->id !==$post->user_id){
-        //     return redirect("/posts")->with('error', 'Unauthorizsed Page');
-        // }
-        // return view("posts.edit")->with('post', $post);
     }
 
     public function update(Request $request, $id)
     {
-        // $this->validate($request, [
-        //     'title' => 'required',
-        //     'body' => 'required'
-        // ]);
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required'
+        ]);
 
-        // if($request->hasFile('cover_image')){
-        //     $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+        if($request->hasFile('cover_image')){
+            $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
 
-        //     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
 
-        //     $extension = $request->file('cover_image')->getClientOriginalExtension();
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
 
-        //     $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
 
-        //     $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
-        // }
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        }
 
 
-        // $post= Post::find($id);
-        // $post->title = $request->input('title');
-        // $post->body = $request->input('body');
-        // if($request->hasFile('cover_image')){
-        //     $post->cover_image = $fileNameToStore;
-        // }
-        // $post->save();
+        $post= User::find($id);
+        $post->name = $request->input('name');
+        $post->email = $request->input('email');
+        $post->bio_text = $request->input('bioText');
+        if($request->hasFile('cover_image')){
+            $post->cover_image = $fileNameToStore;
+        }
+        $post->save();
 
-        // return redirect('/posts')->with('success', 'Post Updated');
+        return redirect('/posts')->with('success', 'Post Updated');
     }
 
 

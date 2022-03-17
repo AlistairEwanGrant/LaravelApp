@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Edit Bio</h1>
-    {!! Form::open(['HomeController' => 'update', $users->id]) !!}
+    {!! Form::open(['HomeController' => 'update', $users->id, 'enctype' => 'multipart/form-data']) !!}
     
     @method('PUT')
 

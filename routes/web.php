@@ -35,4 +35,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('home/{id}/editBio', 'App\Http\Controllers\HomeController@edit');
 
+Route::put('home/{id}/editBio', 'App\Http\Controllers\HomeController@update');
+
 
