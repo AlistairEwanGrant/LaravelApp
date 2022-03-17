@@ -136,7 +136,7 @@ class PostsController extends Controller
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
         }
 
-
+        
         $post= Post::find($id);
         $post->title = $request->input('title');
         $post->body = $request->input('body');

@@ -25,45 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
         return view('home')->with('posts', $user->posts);
     }
 
-    // public function store(Request $request)
-    // {
-    //     $this->validate($request, [
-    //         'title' => 'required',
-    //         'body' => 'required',
-    //         'cover_image' => 'image|nullable|max:1999'
-    //     ]);
 
-    //     //handel img upload
-
-    //     if($request->hasFile('cover_image')){
-    //         $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
-
-    //         $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-
-    //         $extension = $request->file('cover_image')->getClientOriginalExtension();
-
-    //         $fileNameToStore = $filename.'_'.time().'.'.$extension;
-
-    //         $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
-    //     }else{
-    //         $fileNameToStore = 'noimage.jpg';
-    //     }
-
-    //     $post= new Post;
-    //     $post->title = $request->input('title');
-    //     $post->body = $request->input('body');
-    //     $post->user_id = auth()->user()->id;
-    //     $post->cover_image = $fileNameToStore;
-    //     $post->save();
-
-    //     return redirect('/posts')->with('success', 'Post Created');
-
-    // }
 
     public function edit($id)
     {
@@ -78,7 +46,8 @@ class HomeController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
 
         if($request->hasFile('cover_image')){
