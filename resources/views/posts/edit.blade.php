@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Edit Post</h1>
-    {!! Form::open(['PostsController' => 'update', $post->id]) !!}
+    {!! Form::open(['PostsController' => 'update', $post->id, 'enctype' => 'multipart/form-data']) !!}
     
     @method('PUT')
 
@@ -18,7 +18,14 @@
             
         
     {{form::submit('Submit', ['class'=>'btn btn-primary'])}}
+    
+    <div class="form-group">
+        {{Form::file('cover_image')}}
+    </div>
+
     {!! Form::close() !!}
+
+    
 
     @if (!Auth::guest())
         @if(Auth::user()->id == $post->user_id)
