@@ -31,13 +31,13 @@ class HomeController extends Controller
     }
 
 
-    public function edit()
+    public function edit($id)
     {
 
-        $user_id = auth()->user()->id;
+        $users = User::find($id);
         // $user = User::find($user_id);
         
-        return view("home.editBio");
+        return view("home.editBio")->with('users', $users);
 
         // $post = Post::find($id);
         
