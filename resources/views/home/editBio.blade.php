@@ -7,11 +7,11 @@
     @method('PUT')
 
         <div class='form-group'>
-            {{Form::label('title', 'Title')}}
-            {{-- {{Form::text('title', $user->name, ['class' => 'form-control', 'placeholder' => 'Title'])}} --}}
+            {{Form::label('name', 'Name')}}
+            {{-- {{Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Title'])}} --}}
         </div>
         <div class='form-group'>
-            {{Form::label('body', 'Body')}}
+            {{Form::label('bio', 'Bio')}}
             {{-- {{Form::textarea('body', $user->bio_text, ['class' => 'form-control', 'placeholder' => 'Body Text'])}} --}}
         </div>
         

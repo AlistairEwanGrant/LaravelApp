@@ -32,7 +32,7 @@ class HomeController extends Controller
     public function edit()
     {
 
-        // $user_id = auth()->user()->id;
+        $user_id = auth()->user()->id;
         // $user = User::find($user_id);
         
         return view("home.editBio");
