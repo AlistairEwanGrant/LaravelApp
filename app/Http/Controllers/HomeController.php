@@ -15,12 +15,13 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth');
     }
+
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -28,6 +29,7 @@ class HomeController extends Controller
         $user = User::find($user_id);
         return view('home')->with('posts', $user->posts);
     }
+
 
     public function edit()
     {
