@@ -22,15 +22,14 @@
                 </div>   
 
 
-
-
                     <h3>Your Blog Posts</h3>
-                    <a class="btn btn bg-primary bg-opacity-50 btn-outline-primary text-black" href="/lsapp/public/posts/create">Create Post</a> 
+                    
+                    
                     @if(count($posts) >0)
                     <table class="table table-striped">
                         <tr bg-light bg-opacity-50>
-                            <td></td>
-                            <td></td>
+                            <td><a class="btn btn bg-primary bg-opacity-50 btn-outline-primary text-black" href="/lsapp/public/posts/create">Create Post</a> </td>
+                            <td><a href="/lsapp/public/home/{{Auth::user()->id}}/editBio" class="btn bg-primary bg-opacity-50 btn-outline-primary text-black float-end">Edit Bio</a></td>
                             <td></td>
                         </tr>
                         @foreach($posts as $post)
