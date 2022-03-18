@@ -27,8 +27,11 @@
                         </div>
                         <div class="col-md-8 col-sm8">
                             <label style="width:100%" class="bg-light bg-opacity-25 rounded-3 border border-dark"><strong>Bio</strong></label>
+                            @if($users->bio_text == null)
+                            <div style="height: 80%" class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">Enter your bio information</div>
+                            @else
                             <div style="height: 80%" class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">{{$users->bio_text}}</div>
-                            
+                            @endif
                                </div>
                         
                     </div>
