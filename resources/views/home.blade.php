@@ -12,11 +12,17 @@
                 <div class="card-header width80">
                     <div class="row">
                         <div class="col-md-4 col-sm4">
-                            {{-- <img style="width:100%" src="storage/cover_images/{{$user->cover_image}}"> --}}
+                            <img style="width:100%" src="storage/cover_images/{{$users->cover_image}}">
+                            <h5>Name</h5>
+                            <div class="bg-light bg-opacity-50 text-black rounded text-center border border-success fw-bolde">{{$users->name}}</div>
+                            <br>
+                            <h5>Email</h5>
+                            <div class="bg-light bg-opacity-50 text-black rounded text-center border border-success fw-bolde">{{$users->email}}</div>
                         </div>
                         <div class="col-md-8 col-sm8">
-                            {{-- <h3><a href="posts/{{$post->id}}">{{$post->title}}</a></h3> --}}bio
-                            {{-- <small>Writen on {{$post -> created_at}} by {{$post->user->name}}</small> --}}
+                            <h5>Bio</h5>
+                            <div style="height: 80%" class="bg-light bg-opacity-50 text-black rounded text-center border border-success fw-bolde">{{$users->bio_text}}</div>
+                            
                         </div>
                     </div>
                 </div>   

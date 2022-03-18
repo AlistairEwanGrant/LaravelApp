@@ -28,7 +28,8 @@ class HomeController extends Controller
         
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        return view('home')->with('posts', $user->posts);
+        $users = User::find($user_id);
+        return view('home')->with('posts', $user->posts)->with('users', $users);
     }
 
 
@@ -72,7 +73,7 @@ class HomeController extends Controller
         }
         $post->save();
 
-        return redirect('/posts')->with('success', 'Post Updated');
+        return redirect('/home')->with('success', 'Post Updated');
     }
 
 

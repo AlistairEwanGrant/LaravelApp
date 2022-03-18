@@ -15,7 +15,10 @@
             {{Form::text('email', $users->email, ['class' => 'form-control', 'placeholder' => 'Email'])}}
         </div>
         <div class='form-group'>
+            
             {{Form::label('bioText', 'BioText')}}
+            <br>
+            <small>470 characters limit</small>
             {{Form::textarea('bioText', $users->bio_text, ['class' => 'form-control', 'placeholder' => 'Bio Text'])}}
         </div>
         <div class="form-group">
