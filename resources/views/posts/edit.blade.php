@@ -21,18 +21,16 @@
     <div class="form-group">
         <br>
         {{Form::file('cover_image')}}
-
-        @if (!Auth::guest())
-        @if(Auth::user()->id == $post->user_id)
-        {!! Form::open(['PostsController' => 'destroy', $post->id, 'class' => 'float-end'])!!}
-            @method('DELETE')
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger float-end'])!!}
-        {!!Form::close()!!}
-        @endif
-    @endif
-
     </div>
 
+       
+    
+            {!! Form::submit('Delete', ['class' => 'btn btn-danger float-end'])!!}
+        {!!Form::close()!!}
+    
+    
+
+    
     {!! Form::close() !!}
     
     
