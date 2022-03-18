@@ -23,7 +23,7 @@
             
         </div>
         <div class="col-md-8 col-sm8">
-            <h3 style="padding:5px" class="text-wrap">{{$post->user->bio_text}}</h3>
+            <h5 style="padding:5px" class="text-wrap">{{$post->user->bio_text}}</h5>
         </div>
     </div>
     <br>
