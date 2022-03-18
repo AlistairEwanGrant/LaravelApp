@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
 @section('content')
-    <h1 style="margin-top:5px" class="bg-light bg-opacity-25 text-white rounded text-center border border-dark fw-bolde fs-3">Posts</h1>
+    <h1 style="margin-top:5px" class="bg-success bg-opacity-50 text-white rounded text-center border border-dark fw-bolde fs-3 fw-bold">Posts</h1>
     @if(count($posts) > 0)
         @foreach($posts as $post)
             <div  class="card-header width80 border border-dark rounded-3 bg-success bg-opacity-25">
@@ -13,7 +13,7 @@
                         <h3><a class="text-white text-decoration-none" href="posts/{{$post->id}}">{{$post->title}}</a></h3>
                     {{$post->body}}
                     <br>
-                        <small>Writen on {{$post -> created_at}} by {{$post->user->name}}</small>
+                        <small class="text-white">Writen on {{$post -> created_at}} by {{$post->user->name}}</small>
                     </div>
                 </div>
             </div>    
