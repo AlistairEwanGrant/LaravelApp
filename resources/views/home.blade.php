@@ -14,7 +14,11 @@
                     <div class="row"><a href="/lsapp/public/home/{{Auth::user()->id}}/editBio" style="margin-bottom:5px"class="btn bg-primary bg-opacity-50 btn-outline-dark text-white float-end ">Edit Bio</a>
                         
                         <div class="col-md-4 col-sm4">
+                            @if($users->cover_image == null)
+                            <img style="width:100%" src="storage/cover_images/noimage.jpg">
+                                @else
                             <img style="width:100%" src="storage/cover_images/{{$users->cover_image}}">
+                            @endif
                             <label style="width:100%" class="bg-light bg-opacity-25 rounded-3 border border-dark"><strong>Name</strong></label>
                             <div class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">{{$users->name}}</div>
                             <br>
@@ -53,6 +57,11 @@
                     
                     @else
                         <p>You have no posts</p>
+                        <tr class="bg-success bg-opacity-25 text-black rounded text-center border border-dark fw-bolde fs-3">
+                            <td></td>
+                            <td><a style="width: 100%" class="btn btn bg-primary bg-opacity-50 btn-outline-dark text-white" href="/lsapp/public/posts/create">Create Post</a></td>
+                            <td></td>
+                        </tr>
                     @endif
 
                 <div class="card-body"><h3><strong>Your Blog Posts</strong></h3>
