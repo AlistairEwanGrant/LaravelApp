@@ -10,7 +10,7 @@
                 
                 
                 {{-- img and bio --}}
-                <div class="card-header width80">
+                <div class="card-header width80 bg-success bg-opacity-50 border border-dark rounded-3">
                     <div class="row"><a href="/lsapp/public/home/{{Auth::user()->id}}/editBio" style="margin-bottom:5px"class="btn bg-primary bg-opacity-50 btn-outline-dark text-white float-end ">Edit Bio</a>
                         
                         <div class="col-md-4 col-sm4">
