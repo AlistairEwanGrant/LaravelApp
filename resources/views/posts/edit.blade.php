@@ -23,9 +23,6 @@
         {{Form::file('cover_image')}}
     </div>
 
-       
-    
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger float-end'])!!}
         {!!Form::close()!!}
     
     
