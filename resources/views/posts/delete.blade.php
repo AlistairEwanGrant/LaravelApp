@@ -1,8 +1,12 @@
 @extends("layouts.app")
 
 @section('content')
-    <h1>Delete Post</h1>
-    <a style="margin-top:5px" href="/lsapp/public/home" class="btn btn-danger">Back</a>
+    <h1 class="text-danger position-absolute top-5 start-50 translate-middle-x "><strong>Delete Post?</strong></h1>
+    <a style="margin-top:5px" href="/lsapp/public/home" class="btn btn-primary">Back</a>
+    {!! Form::open(['PostsController' => 'destroy', $post->id, 'class' => 'float-end mt-1'])!!}
+        @method('DELETE')
+        {!! Form::submit('Delete', ['class' => 'btn btn-danger'])!!}
+    {!!Form::close()!!}
     <h1 style="margin-top:5px" class="bg-success bg-opacity-50 rounded text-center border border-3 border-dark fw-bolde fs-3 fw-bold">{{$post->title}}</h1>
         @if($post->cover_image == 'noimage.jpg')
           
@@ -35,10 +39,8 @@
     
     <hr>
 
-    {!! Form::open(['PostsController' => 'destroy', $post->id, 'class' => 'float-end'])!!}
-        @method('DELETE')
-        {!! Form::submit('Delete', ['class' => 'btn btn-danger'])!!}
-    {!!Form::close()!!}
+    
+    
 
         {!!Form::close()!!}    
   

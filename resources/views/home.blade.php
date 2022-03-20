@@ -36,35 +36,32 @@
                         
                     </div>
                 </div>   
-                    
+                
                     @if(count($posts) >0)
                     <table class="table table-striped">
-                        <tr class="bg-success bg-opacity-25 text-black rounded text-center border border-dark fw-bolde fs-3">
+                        <tr class="bg-success bg-opacity-50 rounded text-center border border-dark fw-bolde fs-3">
                             <td></td>
-                            <td><a style="width: 100%" class="btn btn bg-primary bg-opacity-50 btn-outline-dark text-white" href="/lsapp/public/posts/create">Create Post</a></td>
+                            <td></td>
                             <td></td>
                         </tr>
                         @foreach($posts as $post)
                         <tr>
                             <td class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde fs-3">{{$post->title}}</td>
-                            <td class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">{{$post->body}}</td>
+                            <td style="width: 65%" class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">{{$post->body}}</td>
                             <td class="bg-success bg-opacity-25 text-black rounded text-center border border-dark fw-bolde">
-                                <a href="/lsapp/public/posts/{{$post->id}}/edit" class="btn bg-primary bg-opacity-50 btn-outline-dark text-white float-end">Edit</a>
-                                <a href="/lsapp/public/posts/{{$post->id}}/delete" class="btn bg-danger btn-outline-dark text-white float-end">Delete</a>
+                                <a href="/lsapp/public/posts/{{$post->id}}/edit" class="btn bg-primary bg-opacity-50 btn-outline-dark text-white float-end mt-1">Edit</a>
+                                <a href="/lsapp/public/posts/{{$post->id}}/delete" class="btn bg-danger btn-outline-dark text-white float-end mt-1">Delete</a>
                             </td>
                         </tr>
                         @endforeach
                     
                     @else
                         <p>You have no posts</p>
-                        <tr class="bg-success bg-opacity-25 text-black rounded text-center border border-dark fw-bolde fs-3">
-                            <td></td>
-                            <td><a style="width: 100%" class="btn btn bg-primary bg-opacity-50 btn-outline-dark text-white" href="/lsapp/public/posts/create">Create Post</a></td>
-                            <td></td>
-                        </tr>
+                        
                     @endif
 
                 <div class="card-body"><h3><strong>Your Blog Posts</strong></h3>
+                    <a style="width: 100%" class="btn btn bg-primary bg-opacity-50 btn-outline-dark text-white" href="/lsapp/public/posts/create">Create Post</a>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
