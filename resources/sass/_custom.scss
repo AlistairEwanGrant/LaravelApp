@@ -1,6 +1,50 @@
-.lowerMargin {
-    margin-bottom: 20px !important;
+.widthFull {
+    width:100%;
 }
 
-.width80 {width: 80%;}
+.height80{
+    height: 80%;
+}
 
+.maxHeight500 {
+    max-height:500px;
+}
+
+.width65{
+    width: 65%;
+}
+
+.autoWidth{
+    width: auto;
+}
+
+.marginBottom5{
+    margin-bottom:5px;
+}
+.marginTop5{
+    margin-top:5px;
+}
+
+.height50{
+    max-height: 50px;
+}
+
+.noDisplay{
+display: none;
+}
+
+.centerAlign {
+    text-align: center;
+}
+
+.maxWidth300 {
+    max-width: 300px
+}
+
+.padding5{
+    padding:5px
+}
+
+.maxHeight400{
+    max-height:400px;
+}

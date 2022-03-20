@@ -1,4 +1,4 @@
-<nav style="max-height: 50px" class="navbar navbar-expand navbar-dark bg-dark lowerMargin">
+<nav class="navbar navbar-expand navbar-dark bg-dark height50">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@
                                   Logout
                               </a>
 
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="noDisplay">
                                   {{ csrf_field() }}
                               </form>
                           </li>

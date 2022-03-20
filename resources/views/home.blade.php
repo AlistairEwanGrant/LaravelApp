@@ -10,27 +10,27 @@
                 
                 
                 {{-- img and bio --}}
-                <div class="card-header width80 bg-success bg-opacity-50 border border-dark rounded-3">
-                    <div class="row"><a href="/lsapp/public/home/{{Auth::user()->id}}/editBio" style="margin-bottom:5px"class="btn bg-primary bg-opacity-50 btn-outline-dark text-white float-end ">Edit Bio</a>
+                <div class="card-header bg-success bg-opacity-50 border border-dark rounded-3">
+                    <div class="row"><a href="/lsapp/public/home/{{Auth::user()->id}}/editBio" class="btn bg-primary bg-opacity-50 btn-outline-dark text-white float-end marginBottom5">Edit Bio</a>
                         
                         <div class="col-md-4 col-sm4">
                             @if($users->cover_image == null)
-                            <img style="width:100%" src="storage/cover_images/noimage.jpg">
+                            <img class="widthFull" src="storage/cover_images/noimage.jpg">
                                 @else
-                            <img style="width:100%" src="storage/cover_images/{{$users->cover_image}}">
+                            <img class="widthFull" src="storage/cover_images/{{$users->cover_image}}">
                             @endif
-                            <label style="width:100%" class="bg-light bg-opacity-25 rounded-3 border border-dark"><strong>Name</strong></label>
+                            <label class="bg-light bg-opacity-25 rounded-3 border border-dark widthFull"><strong>Name</strong></label>
                             <div class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">{{$users->name}}</div>
                             <br>
-                            <label style="width:100%" class="bg-light bg-opacity-25 rounded-3 border border-dark"><strong>Email</strong></label>
+                            <label class="bg-light bg-opacity-25 rounded-3 border border-dark widthFull"><strong>Email</strong></label>
                             <div class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">{{$users->email}}</div>
                         </div>
                         <div class="col-md-8 col-sm8">
-                            <label style="width:100%" class="bg-light bg-opacity-25 rounded-3 border border-dark"><strong>Bio</strong></label>
+                            <label class="bg-light bg-opacity-25 rounded-3 border border-dark widthFull"><strong>Bio</strong></label>
                             @if($users->bio_text == null)
-                            <div style="height: 80%" class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">Enter your bio information</div>
+                            <div class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde height80">Enter your bio information</div>
                             @else
-                            <div style="height: 80%" class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">{{$users->bio_text}}</div>
+                            <div class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde height80">{{$users->bio_text}}</div>
                             @endif
                                </div>
                         
@@ -47,7 +47,7 @@
                         @foreach($posts as $post)
                         <tr>
                             <td class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde fs-3">{{$post->title}}</td>
-                            <td style="width: 65%" class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">{{$post->body}}</td>
+                            <td class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde width65">{{$post->body}}</td>
                             <td class="bg-success bg-opacity-25 text-black rounded text-center border border-dark fw-bolde">
                                 <a href="/lsapp/public/posts/{{$post->id}}/edit" class="btn bg-primary bg-opacity-50 btn-outline-dark text-white float-end mt-1">Edit</a>
                                 <a href="/lsapp/public/posts/{{$post->id}}/delete" class="btn bg-danger btn-outline-dark text-white float-end mt-1">Delete</a>
@@ -61,7 +61,7 @@
                     @endif
 
                 <div class="card-body"><h3><strong>Your Blog Posts</strong></h3>
-                    <a style="width: 100%" class="btn btn bg-primary bg-opacity-50 btn-outline-dark text-white" href="/lsapp/public/posts/create">Create Post</a>
+                    <a class="btn btn bg-primary bg-opacity-50 btn-outline-dark text-white widthFull" href="/lsapp/public/posts/create">Create Post</a>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
