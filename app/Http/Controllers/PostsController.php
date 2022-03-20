@@ -94,6 +94,12 @@ class PostsController extends Controller
         return view("posts.show")->with('post', $post);
     }
 
+    public function showDelete($id)
+    {
+        $post = Post::find($id);
+        return view("posts.delete")->with('post', $post);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

@@ -37,4 +37,7 @@ Route::get('home/{id}/editBio', 'App\Http\Controllers\HomeController@edit');
 
 Route::put('home/{id}/editBio', 'App\Http\Controllers\HomeController@update');
 
+Route::get('posts/{id}/delete', 'App\Http\Controllers\PostsController@showDelete');
+
+Route::delete('posts/{id}/delete', 'App\Http\Controllers\PostsController@destroy');
 

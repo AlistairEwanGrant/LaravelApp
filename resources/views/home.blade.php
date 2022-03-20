@@ -36,10 +36,6 @@
                         
                     </div>
                 </div>   
-                
-
-                    
-                
                     
                     @if(count($posts) >0)
                     <table class="table table-striped">
@@ -54,6 +50,7 @@
                             <td class="bg-light bg-opacity-50 text-black rounded text-center border border-dark fw-bolde">{{$post->body}}</td>
                             <td class="bg-success bg-opacity-25 text-black rounded text-center border border-dark fw-bolde">
                                 <a href="/lsapp/public/posts/{{$post->id}}/edit" class="btn bg-primary bg-opacity-50 btn-outline-dark text-white float-end">Edit</a>
+                                <a href="/lsapp/public/posts/{{$post->id}}/delete" class="btn bg-danger btn-outline-dark text-white float-end">Delete</a>
                             </td>
                         </tr>
                         @endforeach
