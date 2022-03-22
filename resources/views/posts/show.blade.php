@@ -18,8 +18,11 @@
     <div class="bg-success bg-opacity-50 border border-5 border-dark rounded-3 bg-opacity-25 row">
         <div class="col-md-4 col-sm4">
             
+            @if($post->user->cover_image == null)
+            <img class="widthFull" src="../storage/cover_images/noimage.jpg">
+                                @else
             <img class="maxWidth300 padding5" src="../storage/cover_images/{{$post->user->cover_image}}">
-                
+                @endif
             
         </div>
         <div class="col-md-8 col-sm8">
